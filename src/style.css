@@ -1,0 +1,360 @@
+/* styles for the hero section */
+/* *{
+background-color: #023047;
+} */
+
+.bg-image {
+  background-image: url("./images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  background-color: #fff;
+  color: #000;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+  background-color: #023047;
+}
+
+/* Heading and Half Bar */
+.about-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 80;
+}
+
+.about-heading h2 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.about-heading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background-color: #f5a623;
+}
+
+/* Hexagons */
+.hex-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hex-card {
+  position: relative;
+  width: 130px;
+  height: 70px;
+  margin: 50px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #04c2c9;
+  transition: all 0.3s ease-in-out;
+}
+
+.hex-card::before,
+.hex-card::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #04c2c9;
+  z-index: -1;
+  /* transform: rotate(60deg); */
+}
+
+.hex-card::before {
+  transform: rotate(-60deg);
+}
+
+.hex-card::after {
+  transform: rotate(-120deg);
+}
+
+.hex-card:hover {
+  transform: scale(1.1);
+}
+
+/* Icon */
+.hex-row i {
+  color: #fff;
+  font-size: 36px;
+}
+
+/* Heading and Paragraph */
+.hex-card .hex-card-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  text-align: center;
+  z-index: 1;
+}
+
+.hex-row h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hex-row p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.progress {
+  height: 30px;
+  display: flex;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.progress .sr-only {
+  position: relative;
+}
+
+.progress-bar {
+  line-height: 25px;
+  background-color: #00a1a7;
+}
+
+.progress-label {
+  /* position: absolute; */
+  top: 0;
+  background-color: #04c2c9;
+  color: #fff;
+  min-width: 120px;
+  text-align: center;
+}
+
+.top-button {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.icons{
+  /* background: #262f38; */
+  cursor: pointer;
+  /* margin: 0 15px; */
+  margin-top: 30px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+  /* width: 55px; */
+}
+
+.icon{
+  /* background: #262f38; */
+  padding: 20px;
+}
+
+.companytext {
+  text-align:justify ;
+  font-size: 14px;
+  color: white;
+  margin-left: 10px;
+}
+
+.companytext .companyname{
+  color: #FFB703;
+  text-transform: uppercase;
+}
+
+.companytext .companyservices{
+  color: #FFB703;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container Col {
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+
+/* Style inputs with type="text", select elements and textareas */
+input, select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #FFB703;
+  color: white;
+  /* padding: 12px 20px; */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #219EBC;
+}
+
+/* Add a background color and some padding around the form */
+.contact {
+  /* border-radius: 5px; */
+  /* display: flex; */
+  width: 100%;
+  /* height: 100%; */ 
+  max-width: none;
+  background-color: #252934;
+  justify-content: center;
+}
+
+.contact-section {
+  /* border-radius: 5px; */
+  width: 400px;
+  margin: 0 auto;
+  background-color: #252934;
+  /* padding: 20px; */
+  /* margin-bottom: 40px; */
+}
+.contact-section label {
+  font-size: 20px;
+  color: white;
+}
+.contact-section h1 {
+  font-size: 20px;
+  color: white;
+}
+
+.logo{
+  display: block;
+  margin: auto;
+}
+
+
+.icon-box {
+  text-align: center;
+  background: #219EBC;
+  padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+}
+
+.icon-box .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background: #00a1a7;
+  border-radius: 5px;
+  transition: all 0.3s ease-out 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transform-style: preserve-3d;
+}
+
+
+.icon-box .icon::before {
+  position: absolute;
+  content: "";
+  left: -8px;
+  top: -8px;
+  height: 100%;
+  width: 100%;
+  background: #023047;
+  border-radius: 5px;
+  transition: all 0.3s ease-out 0s;
+  transform: translateZ(-1px);
+}
+
+.icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.icon-box h4 a {
+  color: #fff;
+}
+
+.icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.icon-box:hover {
+  background: #8ECAE6;
+  border-color: #8ECAE6;
+}
+
+.icon-box:hover .icon {
+  background: #fff;
+}
+
+.icon-box:hover .icon i {
+  color: #023047;
+}
+
+.icon-box:hover .icon::before {
+  background: #023047;
+}
+
+.icon-box:hover h4 a,
+.icon-box:hover p {
+  color: #fff;
+}
