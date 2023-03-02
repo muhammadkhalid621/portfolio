@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 
 import "./style.css";
-import sms from "./images/sms.png";
 
 export default function Contact() {
   return (
@@ -18,12 +17,12 @@ export default function Contact() {
       >
         <path d="M0 0 L50 100 L100 0 Z" fill="#023047" stroke="#023047"></path>
       </svg>
-      <Row className="justify-content-md-center .about-container">
-          <Col md="auto">
-            <h1 className="about-heading">Contact Us</h1>
-            <div className="half-bar"></div>
-          </Col>
-        </Row>
+      <div className="row justify-content-md-center .about-container">
+        <div className="col">
+          <h1 className="about-heading">Contact Us</h1>
+          <div className="half-bar"></div>
+        </div>
+      </div>
       <div class="contact-section">
        
         <h1>Have a question or want to work together?</h1>

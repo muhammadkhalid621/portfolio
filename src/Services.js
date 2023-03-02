@@ -1,29 +1,33 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { GoDeviceMobile, GoLightBulb } from "react-icons/go";
-import { TbWorld } from "react-icons/tb";
-import { RiImageEditFill } from "react-icons/ri";
-import { BsCameraVideo } from "react-icons/bs";
+
+import web from "./images/Web-development.png";
+import app from "./images/app-development.png";
+import video from "./images/video-editing.png";
+import graphics from "./images/Graphic-design.png";
+import machine from "./images/machine-learning.png";
+import digital from "./images/digital-marketing.png";
 
 function Services() {
   return (
     <div className="Container about-section">
-      <Row className="justify-content-md-center .about-container">
-        <Col md="auto">
+      <div className="row justify-content-md-center .about-container">
+        <div className="col">
           <h1 className="about-heading">Services</h1>
           <div className="half-bar"></div>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={4} className="mb-4">
+        </div>
+      </div>
+      <div className="row">
+        <div md={4} className="col mb-4">
           <div class="icon-box">
             <div class="icon">
-              <TbWorld
+              <img
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: "40px",
+                  height: "40px",
                   color: "white",
                 }}
+                src={web}
               />
             </div>
             <h4>
@@ -36,16 +40,17 @@ function Services() {
               business needs.
             </p>
           </div>
-        </Col>
-        <Col md={4} className="mb-4">
+        </div>
+        <div md={4} className="col mb-4">
           <div class="icon-box">
             <div class="icon">
-              <GoDeviceMobile
+              <img
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: "40px",
+                  height: "40px",
                   color: "white",
                 }}
+                src={app}
               />
             </div>
             <h4>
@@ -58,16 +63,17 @@ function Services() {
               to life.
             </p>
           </div>
-        </Col>
-        <Col md={4} className="mb-4">
+        </div>
+        <div md={4} className="col mb-4">
           <div class="icon-box">
             <div class="icon">
-              <RiImageEditFill
+              <img
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: "40px",
+                  height: "40px",
                   color: "white",
                 }}
+                src={video}
               />
             </div>
             <h4>
@@ -80,18 +86,19 @@ function Services() {
               compelling brand story.
             </p>
           </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col md={4} className="mb-4">
+        </div>
+      </div>
+      <div className="row">
+        <div md={4} className="col mb-4">
           <div class="icon-box">
             <div class="icon">
-              <BsCameraVideo
+              <img
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: "40px",
+                  height: "40px",
                   color: "white",
                 }}
+                src={video}
               />
             </div>
             <h4>
@@ -104,16 +111,17 @@ function Services() {
               masterpieces that captivate and inspire.
             </p>
           </div>
-        </Col>
-        <Col md={4} className="mb-4">
+        </div>
+        <div md={4} className="col mb-4">
           <div class="icon-box">
             <div class="icon">
-              <GoLightBulb
+              <img
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: "40px",
+                  height: "40px",
                   color: "white",
                 }}
+                src={machine}
               />
             </div>
             <h4>
@@ -126,10 +134,19 @@ function Services() {
               results.
             </p>
           </div>
-        </Col>
-        <Col md={4} className="mb-4">
+        </div>
+        <div md={4} className="col mb-4">
           <div class="icon-box">
-            <div class="icon">{/* <i class="mdi mdi"></i> */}</div>
+            <div class="icon">
+              <img
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  color: "white",
+                }}
+                src={digital}
+              />
+            </div>
             <h4>
               <a>Digital Marketing</a>
             </h4>
@@ -140,8 +157,8 @@ function Services() {
               revenue.
             </p>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </div>
   );
 }

@@ -25,7 +25,7 @@ const HeroSection = () => {
               }}>Custom software solutions with agility.</h3>
               <a
                 className="btn btn-outline-light btn-lg"
-                href="#!"
+                href="#portfolio"
                 role="button"
               >
                 Portfolio
