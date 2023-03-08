@@ -1,5 +1,4 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
 
 import web from "./images/Web-development.png";
 import app from "./images/app-development.png";
@@ -18,9 +17,9 @@ function Services() {
         </div>
       </div>
       <div className="row">
-        <div md={4} className="col mb-4">
-          <div class="icon-box">
-            <div class="icon">
+        <div  className="col-md-4 mb-4">
+          <div className="icon-box">
+            <div className="icon">
               <img
                 style={{
                   width: "40px",
@@ -41,9 +40,9 @@ function Services() {
             </p>
           </div>
         </div>
-        <div md={4} className="col mb-4">
-          <div class="icon-box">
-            <div class="icon">
+        <div  className="col-md-4 mb-4">
+          <div className="icon-box">
+            <div className="icon">
               <img
                 style={{
                   width: "40px",
@@ -64,16 +63,16 @@ function Services() {
             </p>
           </div>
         </div>
-        <div md={4} className="col mb-4">
-          <div class="icon-box">
-            <div class="icon">
+        <div  className="col-md-4 mb-4">
+          <div className="icon-box">
+            <div className="icon">
               <img
                 style={{
                   width: "40px",
                   height: "40px",
                   color: "white",
                 }}
-                src={video}
+                src={graphics}
               />
             </div>
             <h4>
@@ -89,9 +88,9 @@ function Services() {
         </div>
       </div>
       <div className="row">
-        <div md={4} className="col mb-4">
-          <div class="icon-box">
-            <div class="icon">
+        <div  className="col-md-4 mb-4">
+          <div className="icon-box">
+            <div className="icon">
               <img
                 style={{
                   width: "40px",
@@ -112,9 +111,9 @@ function Services() {
             </p>
           </div>
         </div>
-        <div md={4} className="col mb-4">
-          <div class="icon-box">
-            <div class="icon">
+        <div  className="col-md-4 mb-4">
+          <div className="icon-box">
+            <div className="icon">
               <img
                 style={{
                   width: "40px",
@@ -135,9 +134,9 @@ function Services() {
             </p>
           </div>
         </div>
-        <div md={4} className="col mb-4">
-          <div class="icon-box">
-            <div class="icon">
+        <div  className="col-md-4 mb-4">
+          <div className="icon-box">
+            <div className="icon">
               <img
                 style={{
                   width: "40px",

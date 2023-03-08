@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ModalVideo from "react-modal-video";
 
 import ashar0 from "./images/ashar-0.jpg";
 import ashar1 from "./images/ashar-1.jpg";
@@ -13,6 +12,10 @@ import logo2 from "./images/logo-2.png";
 import rover0 from "./images/rover-0.jpeg";
 import rover1 from "./images/rover-1.jpeg";
 import rover2 from "./images/rover-2.jpeg";
+import rover3 from "./images/rover-3.jpeg";
+import rover4 from "./images/rover-4.jpeg";
+import rover5 from "./images/rover-5.jpeg";
+import rover6 from "./images/rover-6.jpeg";
 import web1 from "./images/web1.jpeg";
 import web2 from "./images/web2.jpeg";
 import web3 from "./images/web3.jpeg";
@@ -21,20 +24,57 @@ import sike1 from "./images/sike-02.jpeg";
 import sike2 from "./images/sike-05.jpeg";
 import sike3 from "./images/sike-06.jpeg";
 import video1 from "./images/video1.png";
-import Cinematic from "./images/Cinematic Color Grading.mp4";
+import Cinematic from "./images/color-grading.mp4";
+import user0 from "./images/user-0.jpeg";
+import user1 from "./images/user-1.jpeg";
+import user2 from "./images/user-2.jpeg";
+import login0 from "./images/login-0.png";
+import login1 from "./images/login-1.jpeg";
+import login2 from "./images/login-2.jpeg";
+import login3 from "./images/login-3.jpeg";
+import sms0 from "./images/sms-0.png";
+import sms1 from "./images/sms-1.png";
+import sms2 from "./images/sms-2.png";
+import sms3 from "./images/sms-3.png";
+import sms4 from "./images/sms-4.png";
+import sms5 from "./images/sms-5.png";
+import sms from "./images/sms.jpg";
+import tempelate from "./images/tempelate.jpg";
+import tempelate0 from "./images/tempelate-0.png";
+import tempelate1 from "./images/tempelate-1.png";
+import tempelate2 from "./images/tempelate-2.png";
+import tempelate3 from "./images/tempelate-3.png";
+import admin0 from "./images/admin-0.png";
+import admin1 from "./images/admin-1.png";
+import admin2 from "./images/admin-2.png";
+import admin3 from "./images/admin-3.jpeg";
 
 import "./style.css";
-// import Modal from "./Components/Modal";
 
 export default function Portfolio() {
-  const [imageData, setImageData] = useState({});
-  const [isOpen, setOpen] = useState(false);
+  const [imageData, setImageData] = useState({
+    images: [],
+    title: "",
+    description: "",
+  });
+  // Get the video modal element
+  const videoStart = () => {
+    const videoModal = document.getElementById("videoModal");
 
-  const setData = (img1, img2, img3, title, description = "") => {
+    // Get the video player element
+    const videoPlayer = document.getElementById("videoPlayer");
+
+    // Add an event listener to the modal's close button
+    videoModal.querySelector(".btn-close").addEventListener("click", () => {
+      // Pause the video playback
+      videoPlayer.currentTime = 0;
+      videoPlayer.pause();
+    });
+  };
+
+  const setData = (images, title, description = "") => {
     setImageData({
-      img1,
-      img2,
-      img3,
+      images,
       title,
       description,
     });
@@ -47,56 +87,67 @@ export default function Portfolio() {
           <div className="half-bar"></div>
         </div>
       </div>
-      <ul class="m-4 nav nav-pills nav-justified nav-fill" id="myTab">
-        <li class="nav-item">
-          <a href="#all" class="nav-link active" data-bs-toggle="tab" >
+      <ul className="m-4 nav nav-pills nav-justified nav-fill" id="myTab">
+        <li className="nav-item">
+          <a href="#all" className="nav-link active" data-bs-toggle="tab">
             ALL
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#web" class="nav-link" data-bs-toggle="tab">
+        <li className="nav-item">
+          <a href="#web" className="nav-link" data-bs-toggle="tab">
             WEB
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#mobile" class="nav-link" data-bs-toggle="tab">
+        <li className="nav-item">
+          <a href="#mobile" className="nav-link" data-bs-toggle="tab">
             MOBILE
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#video" class="nav-link" data-bs-toggle="tab">
+        <li className="nav-item">
+          <a href="#video" className="nav-link" data-bs-toggle="tab">
             VIDEO
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#graphics" class="nav-link" data-bs-toggle="tab">
+        <li className="nav-item">
+          <a href="#graphics" className="nav-link" data-bs-toggle="tab">
             GRAPHIC
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#logo" class="nav-link" data-bs-toggle="tab">
+        <li className="nav-item">
+          <a href="#logo" className="nav-link" data-bs-toggle="tab">
             LOGO
           </a>
         </li>
       </ul>
-      <div class="tab-content">
-        <div class="tab-pane fade show active " id="all">
+      <div className="tab-content">
+        <div className="tab-pane fade show active " id="all">
           <div className="row">
-            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-              <div class="image-container">
+            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+              <div className="image-container">
                 <img
                   src={web1}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>Authentication App</h2>
                   <p>React Js/Node Js</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: login0, alt: "login0" },
+                          { src: login1, alt: "login1" },
+                          { src: login2, alt: "login2" },
+                          { src: login3, alt: "login3" },
+                        ],
+                        "WEB"
+                      );
+                    }}
                   >
                     {" "}
                     Learn More{" "}
@@ -104,42 +155,123 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div class="image-container">
+              <div className="image-container">
                 <img
                   src={web2}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>Sentiment Analysis User Pannel</h2>
                   <p>React Js/Python(Django)</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: user0, alt: "user0" },
+                          { src: user1, alt: "user1" },
+                          { src: user2, alt: "user2" },
+                        ],
+                        "WEB"
+                      );
+                    }}
                   >
                     {" "}
                     Learn More{" "}
                   </button>
                 </div>
               </div>
-              <div class="image-container">
+              <div className="image-container">
                 <img
                   src={ashar0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>POSTER</h2>
                   <p>Ashar Pakistan</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(ashar0, ashar1, ashar2, "POSTER");
+                      setData(
+                        [
+                          { src: ashar0, alt: "ashar0" },
+                          { src: ashar1, alt: "ashar1" },
+                          { src: ashar2, alt: "ashar2" },
+                        ],
+                        "POSTER"
+                      );
+                    }}
+                  >
+                    {" "}
+                    Learn More{" "}
+                  </button>
+                </div>
+              </div>
+              {/* <div className="image-container">
+                <img
+                  src={tempelate}
+                  className="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                />
+                <div className="overlay">
+                  <h2>React Template App</h2>
+                  <p>React Js</p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: tempelate0, alt: "tempelate0" },
+                          { src: tempelate1, alt: "tempelate1" },
+                          { src: tempelate2, alt: "tempelate2" },
+                          { src: tempelate3, alt: "tempelate3" },
+                        ],
+                        "WEB"
+                      );
+                    }}
+                  >
+                    {" "}
+                    Learn More{" "}
+                  </button>
+                </div>
+              </div> */}
+              <div className="image-container">
+                <img
+                  src={sms}
+                  className="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                />
+                <div className="overlay">
+                  <h2>School Managment System</h2>
+                  <p>React Js/Node Js</p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: sms0, alt: "sms0" },
+                          { src: sms1, alt: "sms1" },
+                          { src: sms2, alt: "sms2" },
+                          { src: sms3, alt: "sms3" },
+                          { src: sms4, alt: "sms4" },
+                          { src: sms5, alt: "sms5" },
+                        ],
+                        "WEB"
+                      );
                     }}
                   >
                     {" "}
@@ -148,23 +280,34 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-              <div class="image-container">
+            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+              <div className="image-container">
                 <img
                   src={rover0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>POSTER</h2>
                   <p>Rover Pakistan</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(rover0, rover1, rover2, "POSTER");
+                      setData(
+                        [
+                          { src: rover0, alt: "rover0" },
+                          { src: rover1, alt: "rover1" },
+                          { src: rover2, alt: "rover2" },
+                          { src: rover3, alt: "rover3" },
+                          { src: rover4, alt: "rover4" },
+                          { src: rover5, alt: "rover5" },
+                          { src: rover6, alt: "rover6" },
+                        ],
+                        "POSTER"
+                      );
                     }}
                   >
                     {" "}
@@ -172,67 +315,82 @@ export default function Portfolio() {
                   </button>
                 </div>
               </div>
-              <div class="image-container">
+              <div className="image-container">
                 <img
                   src={web3}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>Sentiment Analysis Admin Pannel</h2>
                   <p>React Js/Python(Django)</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: admin0, alt: "admin0" },
+                          { src: admin1, alt: "admin1" },
+                          { src: admin2, alt: "admin2" },
+                          { src: admin3, alt: "admin3" },
+                        ],
+                        "WEB"
+                      );
+                    }}
                   >
                     {" "}
                     Learn More{" "}
                   </button>
                 </div>
               </div>
-              <div class="image-container">
+              <div className="image-container">
                 <img
                   src={video1}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>Video Editing</h2>
                   <p>Cinematic Color Grading</p>
-
                   <button
                     type="button"
-                    class="btn btn-primary video-btn"
-                    // data-toggle="modal"
-                    // data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
-                    // data-target="#myModal"
-                    // onClick={() => setOpen(true)}
-                    disabled
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#videoModal"
+                    onClick={videoStart}
                   >
                     Watch Video
                   </button>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-              <div class="image-container">
+            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+              <div className="image-container">
                 <img
                   src={mobile}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>SIKE</h2>
                   <p>React Native/Python(Flask)</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(sike1, sike2, sike3, "SIKE");
+                      setData(
+                        [
+                          { src: sike1, alt: "sike1" },
+                          { src: sike2, alt: "sike2" },
+                          { src: sike3, alt: "ashar3" },
+                        ],
+                        "SIKE"
+                      );
                     }}
                   >
                     {" "}
@@ -240,22 +398,29 @@ export default function Portfolio() {
                   </button>
                 </div>
               </div>
-              <div class="image-container">
+              <div className="image-container">
                 <img
                   src={lush0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>POSTER</h2>
                   <p>Lush Cafe</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(lush0, lush1, lush2, "POSTER");
+                      setData(
+                        [
+                          { src: lush0, alt: "lush0" },
+                          { src: lush1, alt: "lush1" },
+                          { src: lush2, alt: "lush2" },
+                        ],
+                        "POSTER"
+                      );
                     }}
                   >
                     {" "}
@@ -264,21 +429,28 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div class="image-container">
+              <div className="image-container">
                 <img
                   src={logo0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>LOGO</h2>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(logo0, logo1, logo2, "LOGO");
+                      setData(
+                        [
+                          { src: logo0, alt: "logo0" },
+                          { src: logo1, alt: "logo1" },
+                          { src: logo2, alt: "logo2" },
+                        ],
+                        "LOGO"
+                      );
                     }}
                   >
                     {" "}
@@ -289,95 +461,169 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="web">
-          <div class="row ">
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+        <div className="tab-pane fade" id="web">
+          <div className="row">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
-                  src={web2}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  src={sms}
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
+                  <h2>School Managment System</h2>
+                  <p>React Js/Node Js</p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: sms0, alt: "sms0" },
+                          { src: sms1, alt: "sms1" },
+                          { src: sms2, alt: "sms2" },
+                          { src: sms3, alt: "sms3" },
+                          { src: sms4, alt: "sms4" },
+                          { src: sms5, alt: "sms5" },
+                        ],
+                        "WEB"
+                      );
+                    }}
+                  >
+                    {" "}
+                    Learn More{" "}
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* <div className="col-md-4 mb-3">
+              <div className="image-container">
+                <img
+                  src={tempelate}
+                  className="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                />
+                <div className="overlay">
+                  <h2>React Template App</h2>
+                  <p>React Js</p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: tempelate0, alt: "tempelate0" },
+                          { src: tempelate1, alt: "tempelate1" },
+                          { src: tempelate2, alt: "tempelate2" },
+                          { src: tempelate3, alt: "tempelate3" },
+                        ],
+                        "WEB"
+                      );
+                    }}
+                  >
+                    {" "}
+                    Learn More{" "}
+                  </button>
+                </div>
+              </div>
+            </div> */}
+
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
+                <img
+                  src={web1}
+                  className="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                />
+                <div className="overlay">
+                  <h2>Authentication App</h2>
+                  <p>React Js/Node Js</p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: login0, alt: "login0" },
+                          { src: login1, alt: "login1" },
+                          { src: login2, alt: "login2" },
+                          { src: login3, alt: "login3" },
+                        ],
+                        "WEB"
+                      );
+                    }}
+                  >
+                    {" "}
+                    Learn More{" "}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
+                <img
+                  src={web3}
+                  className="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                />
+                <div className="overlay">
+                  <h2>Sentiment Analysis Admin Pannel</h2>
+                  <p>React Js/Python(Django)</p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: admin0, alt: "admin0" },
+                          { src: admin1, alt: "admin1" },
+                          { src: admin2, alt: "admin2" },
+                          { src: admin3, alt: "admin3" },
+                        ],
+                        "WEB"
+                      );
+                    }}
+                  >
+                    {" "}
+                    Learn More{" "}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
+                <img
+                  src={web2}
+                  className="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                />
+                <div className="overlay">
                   <h2>Sentiment Analysis User Pannel</h2>
                   <p>React Js/Python(Django)</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carouselModal"
-                  >
-                    {" "}
-                    Learn More{" "}
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
-                <img
-                  src={web1}
-                  class="w-100 shadow-1-strong rounded mb-4"
-                  alt="Boat on Calm Water"
-                />
-                <div class="overlay">
-                  <h2>Sentiment Analysis Admin Pannel</h2>
-                  <p>React Js/Python(Django)</p>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carouselModal"
-                  >
-                    {" "}
-                    Learn More{" "}
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
-                <img
-                  src={web3}
-                  class="w-100 shadow-1-strong rounded mb-4"
-                  alt="Boat on Calm Water"
-                />
-                <div class="overlay">
-                  <h2>Sentiment Analysis Admin Pannel</h2>
-                  <p>React Js/Python(Django)</p>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#carouselModal"
-                  >
-                    {" "}
-                    Learn More{" "}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="mobile">
-          <div class="row ">
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
-                <img
-                  src={mobile}
-                  class="w-100 shadow-1-strong rounded mb-4"
-                  alt="Boat on Calm Water"
-                />
-                <div class="overlay">
-                  <h2>SIKE</h2>
-                  <p>React Native/Python(Flask)</p>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(sike1, sike2, sike3, "SIKE");
+                      setData(
+                        [
+                          { src: user0, alt: "user0" },
+                          { src: user1, alt: "user1" },
+                          { src: user2, alt: "user2" },
+                        ],
+                        "WEB"
+                      );
                     }}
                   >
                     {" "}
@@ -388,53 +634,105 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        <div class="tab-pane fade show" id="video">
-          <div class="row ">
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+        <div className="tab-pane fade" id="mobile">
+          <div className="row ">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
-                  src={video1}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  src={mobile}
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
-                  <h2>Video Editing</h2>
-                  <p>Cinematic Color Grading</p>
-
+                <div className="overlay">
+                  <h2>SIKE</h2>
+                  <p>React Native/Python(Flask)</p>
                   <button
                     type="button"
-                    class="btn btn-primary video-btn"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#carouselModal"
+                    onClick={() => {
+                      setData(
+                        [
+                          { src: sike1, alt: "sike1" },
+                          { src: sike2, alt: "sike2" },
+                          { src: sike3, alt: "sike3" },
+                        ],
+                        "SIKE"
+                      );
+                    }}
+                  >
+                    {" "}
+                    Learn More{" "}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="tab-pane fade show" id="video">
+          <div className="row ">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
+                <img
+                  src={video1}
+                  className="w-100 shadow-1-strong rounded mb-4"
+                  alt="Boat on Calm Water"
+                />
+                <div className="overlay">
+                  <h2>Video Editing</h2>
+                  <p>Cinematic Color Grading</p>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#videoModal"
+                    onClick={videoStart}
+                  >
+                    Watch Video
+                  </button>
+
+                  {/* <button
+                    type="button"
+                    className="btn btn-primary video-btn"
                     data-toggle="modal"
                     data-src="https://www.youtube.com/embed/NFWSFbqL0A0"
                     data-target="#myModal"
                     disabled
                   >
                     Watch Video
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="graphics">
-          <div class="row ">
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+        <div className="tab-pane fade" id="graphics">
+          <div className="row ">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
                   src={ashar0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>POSTER</h2>
                   <p>Ashar Pakistan</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(ashar0, ashar1, ashar2, "POSTER");
+                      setData(
+                        [
+                          { src: ashar0, alt: "ashar0" },
+                          { src: ashar1, alt: "ashar1" },
+                          { src: ashar2, alt: "ashar2" },
+                        ],
+                        "POSTER"
+                      );
                     }}
                   >
                     {" "}
@@ -443,23 +741,30 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
                   src={lush0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>POSTER</h2>
                   <p>Lush Cafe</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(lush0, lush1, lush2, "POSTER");
+                      setData(
+                        [
+                          { src: lush0, alt: "lush0" },
+                          { src: lush1, alt: "lush1" },
+                          { src: lush2, alt: "lush2" },
+                        ],
+                        "POSTER"
+                      );
                     }}
                   >
                     {" "}
@@ -468,23 +773,34 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
                   src={rover0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>POSTER</h2>
                   <p>Rover Pakistan</p>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(rover0, rover1, rover2, "POSTER");
+                      setData(
+                        [
+                          { src: rover0, alt: "rover0" },
+                          { src: rover1, alt: "rover1" },
+                          { src: rover2, alt: "rover2" },
+                          { src: rover3, alt: "rover3" },
+                          { src: rover4, alt: "rover4" },
+                          { src: rover5, alt: "rover5" },
+                          { src: rover6, alt: "rover6" },
+                        ],
+                        "POSTER"
+                      );
                     }}
                   >
                     {" "}
@@ -495,24 +811,24 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="logo">
-          <div class="row ">
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+        <div className="tab-pane fade" id="logo">
+          <div className="row ">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
                   src={logo0}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>LOGO</h2>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(logo0, logo1, logo2, "LOGO");
+                      setData([{ src: logo0, alt: "logo0" }], "LOGO");
                     }}
                   >
                     {" "}
@@ -521,22 +837,22 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
                   src={logo1}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>LOGO</h2>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(logo0, logo1, logo2, "LOGO");
+                      setData([{ src: logo1, alt: "logo1" }], "LOGO");
                     }}
                   >
                     {" "}
@@ -545,22 +861,22 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-3">
-              <div class="image-container">
+            <div className="col-md-4 mb-3">
+              <div className="image-container">
                 <img
                   src={logo2}
-                  class="w-100 shadow-1-strong rounded mb-4"
+                  className="w-100 shadow-1-strong rounded mb-4"
                   alt="Boat on Calm Water"
                 />
-                <div class="overlay">
+                <div className="overlay">
                   <h2>LOGO</h2>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     data-bs-toggle="modal"
                     data-bs-target="#carouselModal"
                     onClick={() => {
-                      setData(logo0, logo1, logo2, "LOGO");
+                      setData([{ src: logo2, alt: "logo2" }], "LOGO");
                     }}
                   >
                     {" "}
@@ -574,30 +890,30 @@ export default function Portfolio() {
       </div>
       {/* image modal */}
       <div
-        class="modal "
+        className="modal "
         id="carouselModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="carouselModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="carouselModalLabel">
+        <div className="modal-dialog modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="carouselModalLabel">
                 {imageData.title}
               </h5>
 
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <div
                 id="carouselExample"
-                class="carousel slide"
+                className="carousel slide"
                 data-bs-ride="carousel"
                 // style={{
                 //   objectFit: "contain",
@@ -607,56 +923,83 @@ export default function Portfolio() {
                 // }}
               >
                 <p>{imageData.description}</p>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src={imageData.img1} class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block"></div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src={imageData.img2} class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block"></div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src={imageData.img3} class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block"></div>
-                  </div>
+                <div className="carousel-inner">
+                  {/* <div className="carousel-item active">
+                    <img src={imageData.img1} className="d-block w-100" alt="..." />
+                    <div className="carousel-caption d-none d-md-block"></div>
+                  </div> */}
+                  {imageData.images.map((image, idx) => (
+                    <div
+                      key={idx}
+                      className={`carousel-item ${idx === 0 ? "active" : ""}`}
+                    >
+                      <img
+                        className="d-block w-100"
+                        src={image.src}
+                        alt={image.alt}
+                      />
+                    </div>
+                  ))}
                 </div>
                 <button
-                  class="carousel-control-prev"
+                  className="carousel-control-prev"
                   type="button"
                   data-bs-target="#carouselExample"
                   data-bs-slide="prev"
                 >
                   <span
-                    class="carousel-control-prev-icon"
+                    className="carousel-control-prev-icon"
                     aria-hidden="true"
+                    style={{ color: "black" }}
                   ></span>
-                  <span class="visually-hidden">Previous</span>
+                  <span className="visually-hidden">Previous</span>
                 </button>
                 <button
-                  class="carousel-control-next"
+                  className="carousel-control-next"
                   type="button"
                   data-bs-target="#carouselExample"
                   data-bs-slide="next"
                 >
                   <span
-                    class="carousel-control-next-icon"
+                    className="carousel-control-next-icon"
                     aria-hidden="true"
                   ></span>
-                  <span class="visually-hidden">Next</span>
+                  <span className="visually-hidden">Next</span>
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* video modal
-      <ModalVideo
-        // width="90%"
-        // height="calc(90vh - 90px)"
-        url={Cinematic}
-        onClose={() => setOpen(false)}
-      /> */}
+      {/* <!-- Modal --> */}
+      <div
+        className="modal fade"
+        id="videoModal"
+        tabIndex="-1"
+        aria-labelledby="videoModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-lg modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="videoModalLabel">
+                Cinematic Color Grading Video
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <video className="img-fluid" id="videoPlayer" controls>
+                <source src={Cinematic} type="video/mp4"></source>
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
