@@ -87,6 +87,7 @@ background-color: #023047;
 
 .card {
   /* background-color: #4C5D8B; */
+  vertical-align: middle;
   background-image: url('./images/card.jpg');
   background-position: center;
   background-size: cover;
@@ -97,6 +98,7 @@ background-color: #023047;
   /* background-image: url('graphics'); */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  transition: all ease-in-out 0.3s;
   position: relative;
   text-align: center;
   margin: 55px;
@@ -136,21 +138,22 @@ background-color: #023047;
 }
 
 .card-title {
-  padding: 1rem;
-  font-size: 1.5rem;
+  /* padding: 1rem; */
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
-  color: #fff;
+  color: #023047;
   font-size: 25px;
+  margin-top: 20px;
 }
 
 /* The points */
 .card .points {
   margin: 0;
-  padding: 1rem;
+  padding: 10px;
   list-style: none;
   text-align: justify;
-  color: #fff;
+  color: #023047;
   display: inline-block;
   font-size: 20px;
 }
@@ -158,22 +161,22 @@ background-color: #023047;
 /* The check bullet */
 .card .points li:before {
   content: "\2713";
-  color: #fff;
-  margin-right: 0.5rem;
+  color: #023047;
+  margin-right: 10px;
 }
 
 .heading {
-  text-align: justify;
-  font-size: 30px;
+  text-align: center;
+  font-size: 40px;
   color: white;
-  margin-left: 10px;
+  margin: 10px;
 }
 
 .companytext {
   text-align: justify;
   font-size: 20px;
   color: white;
-  margin-left: 10px;
+  margin: 20px;
 }
 
 .companytext .companyname {
@@ -184,15 +187,21 @@ background-color: #023047;
 .companytext .companyservices {
   color: #ffb703;
 }
-.img-fluid {
-  width: 400px;
-  height: 400px;
-  display: block;
-  margin: auto;
+.logo {
   background-color: #fff;
   border-radius: 15px;
-  /* border: 1px solid #fff; */
+  width: auto;
+  height: auto;
+  /* width: 300px;
+  height: 300px; */
 }
+.img-fluid {
+  display: block;
+  margin: auto;
+  
+}
+
+
 .about-img {
   width: auto;
   height: auto;
@@ -244,7 +253,7 @@ background-color: #023047;
   padding: 20px;
 }
 
-.companytext {
+/* .companytext {
   text-align: justify;
   font-size: 14px;
   color: white;
@@ -258,7 +267,7 @@ background-color: #023047;
 
 .companytext .companyservices {
   color: #ffb703;
-}
+} */
 
 .about-container {
   display: flex;
@@ -336,10 +345,13 @@ input[type="submit"]:hover {
 }
 
 .icon-box {
+  background-image: url('./images/card.jpg');
+  background-position: center;
+  background-size: cover;
   text-align: center;
   border-radius: 10px;
   border: 3px solid #ffb703;
-  background: #219ebc;
+  /* background: #219ebc; */
   padding: 80px 0px;
   transition: all ease-in-out 0.3s;
   margin: 25px;
@@ -347,10 +359,13 @@ input[type="submit"]:hover {
 }
 
 .icon-box .icon {
+  background-image: url('./images/card.jpg');
+  background-position: center;
+  background-size: cover;
   margin: 0 auto;
   width: 64px;
   height: 64px;
-  background: #73d1d5;
+  /* background: #73d1d5; */
   border-radius: 5px;
   transition: all 0.3s ease-out 0s;
   display: flex;
@@ -390,7 +405,9 @@ input[type="submit"]:hover {
 }
 
 .icon-box:hover {
-  background: #8ecae6;
+  background-image: url('./images/card.jpg');
+  background-position: center;
+  background-size: cover;
   border-color: #8ecae6;
   transform: scale(1.1);
   border-radius: 10px;
@@ -398,7 +415,9 @@ input[type="submit"]:hover {
 }
 
 .icon-box:hover .icon {
-  background: #fff;
+  background-image: url('./images/card.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .icon-box:hover .icon i {
@@ -411,7 +430,7 @@ input[type="submit"]:hover {
 
 .icon-box:hover h4 a,
 .icon-box:hover p {
-  color: #fff;
+  color: #023047;
 }
 
 .image-container {
@@ -516,8 +535,9 @@ input[type="submit"]:hover {
   }
 
   .companytext {
-    font-size: 15px;
+    font-size: 14px;
   }
+
 }
 
 /* @media only screen and (min-width: 750px) {

@@ -16,11 +16,11 @@ const About = () => {
         <div class="row d-flex align-items-center">
           {/* <!-- Left Column with Heading and Text --> */}
 
-          <div class="col-md-5">
-            <img src={logo} class="img-fluid" />
+          <div class="col-md-12 col-lg-4">
+            <img src={logo} class="img-fluid logo" />
           </div>
           {/* <!-- Right Column with Image --> */}
-          <div class="col-md-6">
+          <div class="col-md-7">
             <h1 class="heading">Who are Technologist?</h1>
             <p class="companytext">
               The <strong class="companyname">Technologist</strong> is an global
@@ -53,7 +53,7 @@ const About = () => {
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-md-12 col-lg-4">
         <div class="card">
           <div class="card-body">
             <div class="circle">
@@ -70,7 +70,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div class="col-lg-4">
+      <div class="col-md-12 col-lg-4">
         <div class="card">
           <div class="card-body">
             <div class="circle">
@@ -88,7 +88,7 @@ const About = () => {
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-md-12 col-lg-4">
         <div
           class="card"
           
