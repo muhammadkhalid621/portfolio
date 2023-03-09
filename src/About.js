@@ -23,16 +23,16 @@ const About = () => {
           <div class="col-md-7">
             <h1 class="heading">Who are Technologist?</h1>
             <p class="companytext">
-              The <strong class="companyname">Technologist</strong> is an global
+              The <strong class="companyname">Technologist</strong> is a global
               IT solutions provider helping businesses to transform digitally.
-              At The <strong class="companyname">Technologist</strong>, we are
+              The <strong class="companyname">Technologist</strong>, we are
               passionate about helping businesses build a strong online presence
               through effective advertising strategies. Our team of experts
-              specialize in
+              specialize in {" "}
               <strong class="companyservices">
                 web development, artificial intelligence, graphic design
               </strong>
-              , and
+              , and {" "}
               <strong class="companyservices">video editing</strong> to create
               engaging content that captures the attention of your target
               audience.
@@ -98,7 +98,7 @@ const About = () => {
             <div class="circle">
               <img src={graphics} alt="profile image" />
             </div>
-            <h5 class="card-title">Graphic Designing</h5>
+            <h5 class="card-title">Designing</h5>
             <ul class="points">
               <li>Illustrator</li>
               <li>Photoshop</li>

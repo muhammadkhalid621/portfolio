@@ -88,7 +88,7 @@ export default function Contact() {
           <div className="half-bar"></div>
         </div>
       </div>
-      <div className="contact-section">
+      <div className="contact-section col-md-5">
         <h1>Have a question or want to work together?</h1>
         <form onSubmit={onSubmit}>
           {/* <label for="fname">Full Name</label> */}

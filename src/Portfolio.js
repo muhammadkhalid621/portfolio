@@ -193,7 +193,7 @@ export default function Portfolio() {
                 />
                 <div className="overlay">
                   <h2>POSTER</h2>
-                  <p>Ashar Pakistan</p>
+                  <p>Ashar's Kitchen</p>
                   <button
                     type="button"
                     className="btn btn-primary"
@@ -718,7 +718,7 @@ export default function Portfolio() {
                 />
                 <div className="overlay">
                   <h2>POSTER</h2>
-                  <p>Ashar Pakistan</p>
+                  <p>Ashar's Kitchen</p>
                   <button
                     type="button"
                     className="btn btn-primary"
